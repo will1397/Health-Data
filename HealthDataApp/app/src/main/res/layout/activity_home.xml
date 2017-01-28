@@ -25,7 +25,7 @@
         android:text="Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
+        android:id="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:textSize="30sp" />
 
@@ -45,6 +45,12 @@
                 android:text="CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/checkBox1" />
+
+            <CheckBox
+                android:text="CheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/checkBox2" />
 
             <CheckBox
@@ -57,8 +63,18 @@
                 android:text="CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBox4" />
+                android:id="@+id/checkBox" />
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:text="Medical History"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textView2"
+        android:textSize="24sp" />
 
 </RelativeLayout>
