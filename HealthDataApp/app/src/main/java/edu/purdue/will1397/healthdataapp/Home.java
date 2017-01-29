@@ -28,6 +28,7 @@ public class Home extends AppCompatActivity {
         linearLayoutHome = (LinearLayout) findViewById(R.id.linearLayoutHome);
         String checkBoxList[];
         checkBoxList = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"}; //put the values for the checkboxes here
+        CheckBox[] medHist = new CheckBox[3];
 
         for (int i = 0; i < checkBoxList.length; i++) { //dynamically create checkboxes
             CheckBox c1 = new CheckBox(this);

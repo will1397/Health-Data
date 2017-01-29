@@ -35,8 +35,58 @@ public class Symptoms extends AppCompatActivity {
         lB = (LinearLayout) findViewById(R.id.LBLayout);
         gT = (LinearLayout) findViewById(R.id.GTLayout);
 
-        String[] headList = new String[] {};
+        String[] headList = new String[] {"Headache", "Dizziness", "Nosebleeds", "Fainting", "Blurred Vision"
+            , "Bleeding Gums"};
+        String[] UBList = new String[] {"Easy Bruising", "Muscle Weakness", "Muscle Spasms",
+            "Prolonged Bleeding from Cuts", "Burning, Crawling, or Prickling of Arms"};
+        String[] chestList = new String[] {"Chest Pain", "Back Pain", "Coughing up Blood", "Difficulty Breathing"};
+        String[] GTList = new String[] {"Vomiting Blood", "Abdominal Distension", "Heavy Menstrual Bleeding",
+            "Bloody, Black, or Tarry Stools", "Red or Pink Urine", "Abnormal Bowel or Bladder Difficulty"};
+        String[] LBList = new String[] {"Leg Weakness", "Muscle Spasms", "Easy Bruising", "Numbness",
+            "Paralysis", "Prolonged Bleeding from Cuts", "Burning, Crawling, or Prickling of Legs"};
 
+        CheckBox[] symptomCheckBoxes = new CheckBox[28];
+        int j = 0;
+
+        for (int i = 0; i < headList.length; i++) {
+            CheckBox h = new CheckBox(this);
+            h.setText(headList[i]);
+            symptomCheckBoxes[j] = h;
+            j++;
+            head.addView(h);
+        }
+
+        for (int i = 0; i < UBList.length; i++) {
+            CheckBox u = new CheckBox(this);
+            u.setText(UBList[i]);
+            symptomCheckBoxes[j] = u;
+            j++;
+            uB.addView(u);
+        }
+
+        for (int i = 0; i < chestList.length; i++) {
+            CheckBox c = new CheckBox(this);
+            c.setText(chestList[i]);
+            symptomCheckBoxes[j] = c;
+            j++;
+            chest.addView(c);
+        }
+
+        for (int i = 0; i < GTList.length; i++) {
+            CheckBox g = new CheckBox(this);
+            g.setText(GTList[i]);
+            symptomCheckBoxes[j] = g;
+            j++;
+            gT.addView(g);
+        }
+
+        for (int i = 0; i < LBList.length; i++) {
+            CheckBox l = new CheckBox(this);
+            l.setText(LBList[i]);
+            symptomCheckBoxes[j] = l;
+            j++;
+            lB.addView(l);
+        }
 
         final Context context = this;
         profile = (Button) findViewById(R.id.profile);
