@@ -46,6 +46,7 @@ public class DrugUser {
         return MedicalHistory;
     }
 
+    public List list_of_Symptoms;
     private String name;
     private String dob;
     private List MedicalHistory;
@@ -79,4 +80,22 @@ public class DrugUser {
         this.weight = weight;
     }
 
+    public void setList_of_Symptoms(List list_of_symptoms) {
+        this.list_of_Symptoms = list_of_symptoms;
+    }
+    public List getList_of_Symptoms() {
+        return list_of_Symptoms;
+    }
+
+    //public void query_db () {
+        //Connection c = null;
+        //List Symptoms = this.getList_of_Symptoms();
+        //String temp = "";
+        //double a, b, c, d;
+        //Class.forName("org.postgresql.Driver");
+        //for (s: Symptoms) {
+
+          //  temp = "";
+        //}
+    //}
 }

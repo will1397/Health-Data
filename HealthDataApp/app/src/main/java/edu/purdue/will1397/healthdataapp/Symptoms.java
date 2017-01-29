@@ -9,7 +9,19 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static edu.purdue.will1397.healthdataapp.Home.patient;
+
 public class Symptoms extends AppCompatActivity {
+
+    public void Symptoms_generators(ArrayList<String> sent, String[] array) {
+        int n;
+        for(n = 0; n < array.length; n++) {
+            sent.add(array[n]);
+        }
+    }
 
     Button profile;
     LinearLayout head;
@@ -17,12 +29,14 @@ public class Symptoms extends AppCompatActivity {
     LinearLayout uB;
     LinearLayout lB;
     LinearLayout gT;
+    Button results;
 
     CheckBox h;
     CheckBox c;
     CheckBox u;
     CheckBox l;
     CheckBox g;
+    public static ArrayList<String> Symptoms;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +49,17 @@ public class Symptoms extends AppCompatActivity {
         lB = (LinearLayout) findViewById(R.id.LBLayout);
         gT = (LinearLayout) findViewById(R.id.GTLayout);
 
-        String[] headList = new String[] {"Headache", "Dizziness", "Nosebleeds", "Fainting", "Blurred Vision"
+        final String[] headList = new String[] {"Headache", "Dizziness", "Nosebleeds", "Fainting", "Blurred Vision"
             , "Bleeding Gums"};
-        String[] UBList = new String[] {"Easy Bruising", "Muscle Weakness", "Muscle Spasms",
+        final String[] UBList = new String[] {"Easy Bruising", "Muscle Weakness", "Muscle Spasms",
             "Prolonged Bleeding from Cuts", "Burning, Crawling, or Prickling of Arms"};
-        String[] chestList = new String[] {"Chest Pain", "Back Pain", "Coughing up Blood", "Difficulty Breathing"};
-        String[] GTList = new String[] {"Vomiting Blood", "Abdominal Distension", "Heavy Menstrual Bleeding",
+        final String[] chestList = new String[] {"Chest Pain", "Back Pain", "Coughing up Blood", "Difficulty Breathing"};
+        final String[] GTList = new String[] {"Vomiting Blood", "Abdominal Distension", "Heavy Menstrual Bleeding",
             "Bloody, Black, or Tarry Stools", "Red or Pink Urine", "Abnormal Bowel or Bladder Difficulty"};
-        String[] LBList = new String[] {"Leg Weakness", "Muscle Spasms", "Easy Bruising", "Numbness",
+        final String[] LBList = new String[] {"Leg Weakness", "Muscle Spasms", "Easy Bruising", "Numbness",
             "Paralysis", "Prolonged Bleeding from Cuts", "Burning, Crawling, or Prickling of Legs"};
 
-        CheckBox[] symptomCheckBoxes = new CheckBox[28];
+        final CheckBox[] symptomCheckBoxes = new CheckBox[28];
         int j = 0;
 
         for (int i = 0; i < headList.length; i++) {
@@ -94,10 +108,50 @@ public class Symptoms extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(context, Home.class);
                 startActivity(intent);
 
+            }
+        });
+
+        results = (Button) findViewById(R.id.results);
+        results.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(context, Results.class);
+                startActivity(intent);
+            }
+        });
+
+        Button clickButton = (Button) findViewById(R.id.Submit);
+        clickButton.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                List<Boolean> list = new ArrayList<>();
+                for(int n = 0; n < 28; n++) {
+                    if (symptomCheckBoxes[n].isEnabled()) {
+                        list.add(true);
+                    } else {
+                        list.add(false);
+                    }
+                    Symptoms = new ArrayList<>();
+                    Symptoms_generators(Symptoms,headList);
+                    Symptoms_generators(Symptoms,UBList);
+                    Symptoms_generators(Symptoms,chestList);
+                    Symptoms_generators(Symptoms,GTList);
+                    Symptoms_generators(Symptoms,LBList);
+
+                    ArrayList<String> User_Symptoms = new ArrayList<>();
+
+                    for(n = 0; n < Symptoms.size(); n++) {
+                        if(list.get(n)) {
+                            User_Symptoms.add(Symptoms.get(n));
+                        }
+                    }
+                    patient.setList_of_Symptoms(User_Symptoms);
+                }
             }
         });
     }

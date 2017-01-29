@@ -10,4 +10,146 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.purdue.will1397.healthdataapp.Symptoms">
 
+    <TextView
+        android:text="Symptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        tools:textSize="30sp"
+        android:layout_alignBaseline="@+id/profile"
+        android:layout_alignBottom="@+id/profile"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/results"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        android:layout_marginTop="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Head"
+                android:textSize="18sp" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="end">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/HeadLayout" />
+            </android.support.v4.widget.NestedScrollView>
+
+            <TextView
+                android:text="Upper Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/UpperBody"
+                android:textSize="18sp" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="end">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/UBLayout" />
+            </android.support.v4.widget.NestedScrollView>
+
+            <TextView
+                android:text="Chest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Chest"
+                tools:textSize="18sp" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="end">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/ChestLayout" />
+            </android.support.v4.widget.NestedScrollView>
+
+            <TextView
+                android:text="Gastro Intestinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/GastroInt"
+                android:textSize="18sp" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="end">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/GTLayout" />
+            </android.support.v4.widget.NestedScrollView>
+
+            <TextView
+                android:text="Lower Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LowerBody"
+                android:textSize="18sp" />
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="end">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/LBLayout" />
+            </android.support.v4.widget.NestedScrollView>
+
+            <Button
+                android:text="Submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Submit"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

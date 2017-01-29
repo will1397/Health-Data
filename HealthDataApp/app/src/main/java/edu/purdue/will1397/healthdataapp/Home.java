@@ -21,10 +21,14 @@ import static java.lang.Integer.parseInt;
 public class Home extends AppCompatActivity {
 
     LinearLayout linearLayoutHome;
+    public static DrugUser patient;
     CheckBox c1;
+    CheckBox c2;
     ScrollView scrollView;
     Button symptoms;
+    Button results;
     public static boolean goTodoctor = false;
+    int j = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +37,22 @@ public class Home extends AppCompatActivity {
 
         scrollView = (ScrollView) findViewById(R.id.medicalHistory);
         linearLayoutHome = (LinearLayout) findViewById(R.id.linearLayoutHome);
-        String checkBoxList[];
-        checkBoxList = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"}; //put the values for the checkboxes here
-        final CheckBox[] medHist = new CheckBox[10];
+        final CheckBox[] medHist = new CheckBox[22];
 
-        for (int i = 0; i < checkBoxList.length; i++) { //dynamically create checkboxes
+        for (int i = 0; i < Medical_problems.length; i++) { //dynamically create checkboxes
             CheckBox c1 = new CheckBox(this);
-            c1.setText(checkBoxList[i]);
-            medHist[i] = c1;
+            c1.setText(Medical_problems[i]);
+            medHist[j] = c1;
+            j++;
             linearLayoutHome.addView(c1);
+        }
+
+        for (int i = 0; i < Contraindications.length; i++) {
+            CheckBox c2 = new CheckBox(this);
+            c2.setText(Contraindications[i]);
+            medHist[j] = c2;
+            j++;
+            linearLayoutHome.addView(c2);
         }
 
         final Context context = this;
@@ -50,10 +61,19 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent intent = new Intent(context, Symptoms.class);
                 startActivity(intent);
 
+            }
+        });
+
+        results = (Button) findViewById(R.id.results);
+        results.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(context, Results.class);
+                startActivity(intent);
             }
         });
 
@@ -70,7 +90,7 @@ public class Home extends AppCompatActivity {
 
                 text = (EditText) findViewById(R.id.weight);
                 String weight = text.getText().toString();
-                int weight_num = parseInt(dob);
+                int weight_num = Integer.parseInt(weight);
 
                 int boolean_len = Medical_problems.length;
 
@@ -89,6 +109,14 @@ public class Home extends AppCompatActivity {
                 }
 
                 DrugUser patient = new DrugUser(name,weight_num,list,dob);
+                if(goTodoctor) {
+                    Intent intent = new Intent(context, Results.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(context, Symptoms.class);
+                    startActivity(intent);
+                }
             }
         });
     }
