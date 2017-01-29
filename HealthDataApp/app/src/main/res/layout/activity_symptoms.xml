@@ -55,7 +55,7 @@
                 android:id="@+id/Head"
                 android:textSize="18sp" />
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_gravity="end">
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/HeadLayout" />
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <TextView
                 android:text="Upper Body"
@@ -74,7 +74,7 @@
                 android:id="@+id/UpperBody"
                 android:textSize="18sp" />
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_gravity="end">
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/UBLayout" />
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <TextView
                 android:text="Chest"
@@ -93,7 +93,7 @@
                 android:id="@+id/Chest"
                 tools:textSize="18sp" />
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_gravity="end">
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/ChestLayout" />
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <TextView
                 android:text="Gastro Intestinal"
@@ -112,7 +112,7 @@
                 android:id="@+id/GastroInt"
                 android:textSize="18sp" />
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_gravity="end">
@@ -122,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/GTLayout" />
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <TextView
                 android:text="Lower Body"
@@ -131,7 +131,7 @@
                 android:id="@+id/LowerBody"
                 android:textSize="18sp" />
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_gravity="end">
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/LBLayout" />
-            </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
             <Button
                 android:text="Submit"
